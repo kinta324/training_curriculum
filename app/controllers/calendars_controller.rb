@@ -37,11 +37,11 @@ class CalendarsController < ApplicationController
       end
 
       wday_num = []
-      if
-        wday_num = wday_num -7
+      if 
+        wday_num = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
       end
 
-      days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => today_plans, :wday => today.wday}
+      days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => today_plans, :wday => wday_num }
       @week_days.push(days)
     end
 
